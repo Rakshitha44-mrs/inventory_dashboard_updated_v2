@@ -3,9 +3,13 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const path = require("path");
 const Product = require("./models/Product");
-require("dotenv").config(); // ✅ loads .env file (optional but recommended)
 
 const app = express();
+
+// ✅ Only load dotenv locally
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 // ✅ Middleware
 app.use(express.urlencoded({ extended: true }));
