@@ -1,0 +1,12 @@
+<%- include('layout', { body: `
+<h1>Edit Product</h1>
+<form action="/products/${product._id}?_method=PUT" method="POST">
+  <label>Name:</label><br>
+  <input type="text" name="name" value="${product.name}" required><br>
+  <label>Quantity:</label><br>
+  <input type="number" name="quantity" value="${product.quantity}" required><br>
+  <label>Price:</label><br>
+  <input type="number" name="price" value="${product.price}" required><br><br>
+  <button type="submit">Update</button>
+</form>
+` }) %>
