@@ -6,7 +6,7 @@ const Product = require("./models/Product");
 
 const app = express();
 
-// ✅ Only load dotenv locally
+// ✅ Load dotenv only locally
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
